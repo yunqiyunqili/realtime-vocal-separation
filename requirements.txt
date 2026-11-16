@@ -1,0 +1,11 @@
+# Tested with Python 3.10, torch 2.5.1, onnx 1.17.0, onnxruntime 1.20.1, museval 0.4.1.
+torch>=2.1
+numpy>=1.21
+scipy>=1.9
+soundfile>=0.10
+pandas>=1.5
+museval>=0.4.1      # needs ffmpeg on PATH at import time (via stempeg)
+onnx>=1.14
+onnxruntime>=1.14
+matplotlib>=3.5
+pytest>=7

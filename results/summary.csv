@@ -1,0 +1,100 @@
+section,model,metric,value,unit,split_condition,n_tracks,note,source
+main,F23,museval_vocals_sdr_median,4.459,dB,test clean,50,,experiment log: results/phase5/test_F23_ep108_b512/summary.json
+main,F23,usdr_vocals_mean,4.835,dB,test clean,50,,experiment log: results/phase5/test_F23_ep108_b512/summary.json
+main,F23,usdr_vocals_median,4.781,dB,test clean,50,,experiment log: results/phase5/test_F23_ep108_b512/summary.json
+main,F23,museval_vocals_sdr_median,4.479,dB,test clean,49,,experiment log: results/phase5/test_F23_ep108_b512/summary.json
+main,F23,usdr_vocals_mean,4.914,dB,test clean,49,,experiment log: results/phase5/test_F23_ep108_b512/summary.json
+main,F23,usdr_vocals_median,4.813,dB,test clean,49,,experiment log: results/phase5/test_F23_ep108_b512/summary.json
+main,F12,museval_vocals_sdr_median,4.902,dB,test clean,50,,experiment log: results/phase5/test_F12_ep075_b512/summary.json
+main,F12,usdr_vocals_mean,5.067,dB,test clean,50,,experiment log: results/phase5/test_F12_ep075_b512/summary.json
+main,F12,usdr_vocals_median,5.108,dB,test clean,50,,experiment log: results/phase5/test_F12_ep075_b512/summary.json
+main,F12,museval_vocals_sdr_median,4.96,dB,test clean,49,,experiment log: results/phase5/test_F12_ep075_b512/summary.json
+main,F12,usdr_vocals_mean,5.154,dB,test clean,49,,experiment log: results/phase5/test_F12_ep075_b512/summary.json
+main,F12,usdr_vocals_median,5.127,dB,test clean,49,,experiment log: results/phase5/test_F12_ep075_b512/summary.json
+main,F6,museval_vocals_sdr_median,4.916,dB,test clean,50,,experiment log: results/phase5/test_F6_ep097_b512/summary.json
+main,F6,usdr_vocals_mean,5.155,dB,test clean,50,,experiment log: results/phase5/test_F6_ep097_b512/summary.json
+main,F6,usdr_vocals_median,5.36,dB,test clean,50,,experiment log: results/phase5/test_F6_ep097_b512/summary.json
+main,F6,museval_vocals_sdr_median,5.014,dB,test clean,49,,experiment log: results/phase5/test_F6_ep097_b512/summary.json
+main,F6,usdr_vocals_mean,5.258,dB,test clean,49,,experiment log: results/phase5/test_F6_ep097_b512/summary.json
+main,F6,usdr_vocals_median,5.4,dB,test clean,49,,experiment log: results/phase5/test_F6_ep097_b512/summary.json
+main,F23,algorithmic_latency,23.2,ms,-,,(L-1)/44100 s; L = encoder window,experiment log: results/phase5/final_latency_tradeoff/latency_quality_compute.csv
+main,F23,params,7065265,count,-,,,experiment log: results/phase5/final_latency_tradeoff/latency_quality_compute.csv
+main,F23,gmac_per_audio_second,1.203,GMAC/s,-,,conv layers only,experiment log: results/phase5/final_latency_tradeoff/latency_quality_compute.csv
+valid,F23,museval_vocals_sdr_median,4.574,dB,valid clean,14,,experiment log: results/phase5/final_latency_tradeoff/latency_quality_compute.csv
+main,F12,algorithmic_latency,11.59,ms,-,,(L-1)/44100 s; L = encoder window,experiment log: results/phase5/final_latency_tradeoff/latency_quality_compute.csv
+main,F12,params,6016689,count,-,,,experiment log: results/phase5/final_latency_tradeoff/latency_quality_compute.csv
+main,F12,gmac_per_audio_second,2.045,GMAC/s,-,,conv layers only,experiment log: results/phase5/final_latency_tradeoff/latency_quality_compute.csv
+valid,F12,museval_vocals_sdr_median,4.754,dB,valid clean,14,,experiment log: results/phase5/final_latency_tradeoff/latency_quality_compute.csv
+main,F6,algorithmic_latency,5.78,ms,-,,(L-1)/44100 s; L = encoder window,experiment log: results/phase5/final_latency_tradeoff/latency_quality_compute.csv
+main,F6,params,5492401,count,-,,,experiment log: results/phase5/final_latency_tradeoff/latency_quality_compute.csv
+main,F6,gmac_per_audio_second,3.728,GMAC/s,-,,conv layers only,experiment log: results/phase5/final_latency_tradeoff/latency_quality_compute.csv
+valid,F6,museval_vocals_sdr_median,5.07,dB,valid clean,14,,experiment log: results/phase5/final_latency_tradeoff/latency_quality_compute.csv
+timing,F23,p50,5.03,ms,60 s valid audio x 3 reps,,"median of 3 reps; reps: 5.026, 5.043, 5.033; Intel(R) Xeon(R) Gold 6150 CPU @ 2.70GHz, exclusive node, ORT 1.20.1 1 thread, block 512",experiment log: results/final_timing_20261112/summary.json
+timing,F23,p99,5.53,ms,60 s valid audio x 3 reps,,"median of 3 reps; reps: 5.547, 5.531, 5.535; Intel(R) Xeon(R) Gold 6150 CPU @ 2.70GHz, exclusive node, ORT 1.20.1 1 thread, block 512",experiment log: results/final_timing_20261112/summary.json
+timing,F23,max,7.15,ms,60 s valid audio x 3 reps,,"median of 3 reps; reps: 7.046, 12.34, 7.149; Intel(R) Xeon(R) Gold 6150 CPU @ 2.70GHz, exclusive node, ORT 1.20.1 1 thread, block 512",experiment log: results/final_timing_20261112/summary.json
+timing,F23,rtf,0.4335,ratio,60 s valid audio x 3 reps,,"median of 3 reps; reps: 0.4329, 0.4343, 0.4335; Intel(R) Xeon(R) Gold 6150 CPU @ 2.70GHz, exclusive node, ORT 1.20.1 1 thread, block 512",experiment log: results/final_timing_20261112/summary.json
+timing,F23,overrun_ratio,0.0,fraction,60 s valid audio x 3 reps,,"median of 3 reps; reps: 0, 0.0001942, 0; Intel(R) Xeon(R) Gold 6150 CPU @ 2.70GHz, exclusive node, ORT 1.20.1 1 thread, block 512",experiment log: results/final_timing_20261112/summary.json
+timing,F12,p50,5.14,ms,60 s valid audio x 3 reps,,"median of 3 reps; reps: 5.134, 5.157, 5.14; Intel(R) Xeon(R) Gold 6150 CPU @ 2.70GHz, exclusive node, ORT 1.20.1 1 thread, block 512",experiment log: results/final_timing_20261112/summary.json
+timing,F12,p99,5.62,ms,60 s valid audio x 3 reps,,"median of 3 reps; reps: 5.681, 5.605, 5.621; Intel(R) Xeon(R) Gold 6150 CPU @ 2.70GHz, exclusive node, ORT 1.20.1 1 thread, block 512",experiment log: results/final_timing_20261112/summary.json
+timing,F12,max,8.08,ms,60 s valid audio x 3 reps,,"median of 3 reps; reps: 10.03, 8.079, 7.572; Intel(R) Xeon(R) Gold 6150 CPU @ 2.70GHz, exclusive node, ORT 1.20.1 1 thread, block 512",experiment log: results/final_timing_20261112/summary.json
+timing,F12,rtf,0.4427,ratio,60 s valid audio x 3 reps,,"median of 3 reps; reps: 0.4422, 0.4442, 0.4427; Intel(R) Xeon(R) Gold 6150 CPU @ 2.70GHz, exclusive node, ORT 1.20.1 1 thread, block 512",experiment log: results/final_timing_20261112/summary.json
+timing,F12,overrun_ratio,0.0,fraction,60 s valid audio x 3 reps,,"median of 3 reps; reps: 0, 0, 0; Intel(R) Xeon(R) Gold 6150 CPU @ 2.70GHz, exclusive node, ORT 1.20.1 1 thread, block 512",experiment log: results/final_timing_20261112/summary.json
+timing,F6,p50,6.51,ms,60 s valid audio x 3 reps,,"median of 3 reps; reps: 6.506, 6.547, 6.492; Intel(R) Xeon(R) Gold 6150 CPU @ 2.70GHz, exclusive node, ORT 1.20.1 1 thread, block 512",experiment log: results/final_timing_20261112/summary.json
+timing,F6,p99,7.22,ms,60 s valid audio x 3 reps,,"median of 3 reps; reps: 7.221, 7.13, 7.223; Intel(R) Xeon(R) Gold 6150 CPU @ 2.70GHz, exclusive node, ORT 1.20.1 1 thread, block 512",experiment log: results/final_timing_20261112/summary.json
+timing,F6,max,9.49,ms,60 s valid audio x 3 reps,,"median of 3 reps; reps: 8.96, 9.489, 11.47; Intel(R) Xeon(R) Gold 6150 CPU @ 2.70GHz, exclusive node, ORT 1.20.1 1 thread, block 512",experiment log: results/final_timing_20261112/summary.json
+timing,F6,rtf,0.5604,ratio,60 s valid audio x 3 reps,,"median of 3 reps; reps: 0.5604, 0.5639, 0.5592; Intel(R) Xeon(R) Gold 6150 CPU @ 2.70GHz, exclusive node, ORT 1.20.1 1 thread, block 512",experiment log: results/final_timing_20261112/summary.json
+timing,F6,overrun_ratio,0.0,fraction,60 s valid audio x 3 reps,,"median of 3 reps; reps: 0, 0, 0; Intel(R) Xeon(R) Gold 6150 CPU @ 2.70GHz, exclusive node, ORT 1.20.1 1 thread, block 512",experiment log: results/final_timing_20261112/summary.json
+timing,S,p50,5.51,ms,60 s valid audio x 3 reps,,"median of 3 reps; reps: 5.555, 5.51, 5.485; Intel(R) Xeon(R) Gold 6150 CPU @ 2.70GHz, exclusive node, ORT 1.20.1 1 thread, block 512",experiment log: results/final_timing_20261112/summary.json
+timing,S,p99,5.95,ms,60 s valid audio x 3 reps,,"median of 3 reps; reps: 5.96, 5.9, 5.947; Intel(R) Xeon(R) Gold 6150 CPU @ 2.70GHz, exclusive node, ORT 1.20.1 1 thread, block 512",experiment log: results/final_timing_20261112/summary.json
+timing,S,max,8.45,ms,60 s valid audio x 3 reps,,"median of 3 reps; reps: 8.881, 8.448, 7.892; Intel(R) Xeon(R) Gold 6150 CPU @ 2.70GHz, exclusive node, ORT 1.20.1 1 thread, block 512",experiment log: results/final_timing_20261112/summary.json
+timing,S,rtf,0.4746,ratio,60 s valid audio x 3 reps,,"median of 3 reps; reps: 0.4784, 0.4746, 0.4725; Intel(R) Xeon(R) Gold 6150 CPU @ 2.70GHz, exclusive node, ORT 1.20.1 1 thread, block 512",experiment log: results/final_timing_20261112/summary.json
+timing,S,overrun_ratio,0.0,fraction,60 s valid audio x 3 reps,,"median of 3 reps; reps: 0, 0, 0; Intel(R) Xeon(R) Gold 6150 CPU @ 2.70GHz, exclusive node, ORT 1.20.1 1 thread, block 512",experiment log: results/final_timing_20261112/summary.json
+timing,C,p50,2.43,ms,60 s valid audio x 3 reps,,"median of 3 reps; reps: 2.444, 2.431, 2.427; Intel(R) Xeon(R) Gold 6150 CPU @ 2.70GHz, exclusive node, ORT 1.20.1 1 thread, block 512",experiment log: results/final_timing_20261112/summary.json
+timing,C,p99,2.67,ms,60 s valid audio x 3 reps,,"median of 3 reps; reps: 2.669, 2.703, 2.673; Intel(R) Xeon(R) Gold 6150 CPU @ 2.70GHz, exclusive node, ORT 1.20.1 1 thread, block 512",experiment log: results/final_timing_20261112/summary.json
+timing,C,max,4.12,ms,60 s valid audio x 3 reps,,"median of 3 reps; reps: 5.08, 4.119, 4.036; Intel(R) Xeon(R) Gold 6150 CPU @ 2.70GHz, exclusive node, ORT 1.20.1 1 thread, block 512",experiment log: results/final_timing_20261112/summary.json
+timing,C,rtf,0.2093,ratio,60 s valid audio x 3 reps,,"median of 3 reps; reps: 0.2105, 0.2093, 0.2091; Intel(R) Xeon(R) Gold 6150 CPU @ 2.70GHz, exclusive node, ORT 1.20.1 1 thread, block 512",experiment log: results/final_timing_20261112/summary.json
+timing,C,overrun_ratio,0.0,fraction,60 s valid audio x 3 reps,,"median of 3 reps; reps: 0, 0, 0; Intel(R) Xeon(R) Gold 6150 CPU @ 2.70GHz, exclusive node, ORT 1.20.1 1 thread, block 512",experiment log: results/final_timing_20261112/summary.json
+architecture,S,museval_vocals_sdr_median,2.579,dB,test clean,50,,experiment log: results/asym_window_20261112/S_test/summary.json
+architecture,S,usdr_vocals_mean,2.967,dB,test clean,50,,experiment log: results/asym_window_20261112/S_test/summary.json
+architecture,S,usdr_vocals_median,3.379,dB,test clean,50,,experiment log: results/asym_window_20261112/S_test/summary.json
+architecture,S,museval_vocals_sdr_median,2.601,dB,test clean,49,,experiment log: results/asym_window_20261112/S_test/summary.json
+architecture,S,usdr_vocals_mean,3.035,dB,test clean,49,,experiment log: results/asym_window_20261112/S_test/summary.json
+architecture,S,usdr_vocals_median,3.381,dB,test clean,49,,experiment log: results/asym_window_20261112/S_test/summary.json
+architecture,C,museval_vocals_sdr_median,2.507,dB,test clean,50,,experiment log: results/fast_round_20261111/C_test/summary.json
+architecture,C,usdr_vocals_mean,2.67,dB,test clean,50,,experiment log: results/fast_round_20261111/C_test/summary.json
+architecture,C,usdr_vocals_median,3.148,dB,test clean,50,,experiment log: results/fast_round_20261111/C_test/summary.json
+architecture,C,museval_vocals_sdr_median,2.531,dB,test clean,49,,experiment log: results/fast_round_20261111/C_test/summary.json
+architecture,C,usdr_vocals_mean,2.77,dB,test clean,49,,experiment log: results/fast_round_20261111/C_test/summary.json
+architecture,C,usdr_vocals_median,3.212,dB,test clean,49,,experiment log: results/fast_round_20261111/C_test/summary.json
+architecture,C,params,628768,count,-,,,experiment log: results/fast_round_20261111/C/probe.json
+architecture,C,gmac_per_audio_second,1.783,GMAC/s,-,,dense ops only (FFT etc. not counted),experiment log: results/fast_round_20261111/C/probe.json
+architecture,C,algorithmic_latency,11.59,ms,-,,FFT 512,experiment log: results/fast_round_20261111/C/probe.json
+architecture,S,params,628768,count,-,,,experiment log: results/asym_window_20261112/train/probe.json
+architecture,S,gmac_per_audio_second,3.353,GMAC/s,-,,dense ops only (FFT etc. not counted),experiment log: results/asym_window_20261112/train/probe.json
+architecture,S,algorithmic_latency,11.59,ms,-,,synthesis support 512 samples,experiment log: docs/asym_window_report.md
+valid,S,museval_vocals_sdr_median,3.6,dB,valid clean,14,,experiment log: results/asym_window_20261112/S_valid/summary.json
+valid,C,museval_vocals_sdr_median,2.754,dB,valid clean,14,,experiment log: results/fast_round_20261111/C_valid/summary.json
+reference,"MDX-Net Track A vocals (offline, non-causal)",museval_vocals_sdr_median,9.05,dB,test clean,50,official whole-segment offline inference; no algorithmic latency defined,experiment log: results/offline/mdx_a_vocal_v1/test/summary.json
+reference,"MDX-Net Track A vocals (offline, non-causal)",usdr_vocals_mean,8.963,dB,test clean,50,,experiment log: results/offline/mdx_a_vocal_v1/test/summary.json
+reference,"MDX-Net Track A vocals (offline, non-causal)",museval_vocals_sdr_median,9.157,dB,test clean,49,official whole-segment offline inference; no algorithmic latency defined,experiment log: results/offline/mdx_a_vocal_v1/test/summary.json
+reference,"MDX-Net Track A vocals (offline, non-causal)",usdr_vocals_mean,9.121,dB,test clean,49,,experiment log: results/offline/mdx_a_vocal_v1/test/summary.json
+robustness,F12,usdr_vocals_mean,4.848,dB,test effects,50,"effects = random EQ / compressor / reverb / limiter chain, one fixed seed per track",experiment log: results/fast_round_20261111/A_baseline_effects_test/summary.json
+robustness,F12,usdr_vocals_median,5.161,dB,test effects,50,,experiment log: results/fast_round_20261111/A_baseline_effects_test/summary.json
+robustness,F12,museval_vocals_sdr_median,3.621,dB,test effects,50,,experiment log: results/fast_round_20261111/A_baseline_effects_test/summary.json
+robustness,F12 + effects fine-tune,usdr_vocals_mean,4.814,dB,test effects,50,"effects = random EQ / compressor / reverb / limiter chain, one fixed seed per track",experiment log: results/fast_round_20261111/A_finetuned_effects_test/summary.json
+robustness,F12 + effects fine-tune,usdr_vocals_median,4.862,dB,test effects,50,,experiment log: results/fast_round_20261111/A_finetuned_effects_test/summary.json
+robustness,F12 + effects fine-tune,museval_vocals_sdr_median,3.683,dB,test effects,50,,experiment log: results/fast_round_20261111/A_finetuned_effects_test/summary.json
+robustness,F12 + effects fine-tune,usdr_vocals_mean,5.078,dB,test clean,50,"effects = random EQ / compressor / reverb / limiter chain, one fixed seed per track",experiment log: results/fast_round_20261111/A_finetuned_clean_test/summary.json
+robustness,F12 + effects fine-tune,usdr_vocals_median,5.18,dB,test clean,50,,experiment log: results/fast_round_20261111/A_finetuned_clean_test/summary.json
+robustness,F12 + effects fine-tune,museval_vocals_sdr_median,4.989,dB,test clean,50,,experiment log: results/fast_round_20261111/A_finetuned_clean_test/summary.json
+device,F12,inference_p50,3.5,ms,mode A file playback,,"Apple M2 Pro, macOS 14.6.1, Core Audio, EarPods, block 512, ORT 1 thread",results/device/results_file_20261113_153148.json
+device,F12,inference_p99,4.0,ms,mode A file playback,,"Apple M2 Pro, macOS 14.6.1, Core Audio, EarPods, block 512, ORT 1 thread",results/device/results_file_20261113_153148.json
+device,F12,inference_max,6.11,ms,mode A file playback,,"Apple M2 Pro, macOS 14.6.1, Core Audio, EarPods, block 512, ORT 1 thread",results/device/results_file_20261113_153148.json
+device,F12,rtf,0.3,ratio,mode A file playback,,"Apple M2 Pro, macOS 14.6.1, Core Audio, EarPods, block 512, ORT 1 thread",results/device/results_file_20261113_153148.json
+device,F12,callbacks_in_stats,6907,count,mode A file playback,,"Apple M2 Pro, macOS 14.6.1, Core Audio, EarPods, block 512, ORT 1 thread",results/device/results_file_20261113_153148.json
+device,F12,xruns_output_underflow,0,count,mode A file playback,,"Apple M2 Pro, macOS 14.6.1, Core Audio, EarPods, block 512, ORT 1 thread",results/device/results_file_20261113_153148.json
+device,F12,inference_over_budget,0,count,mode A file playback,,"Apple M2 Pro, macOS 14.6.1, Core Audio, EarPods, block 512, ORT 1 thread",results/device/results_file_20261113_153148.json
+device,F12,run_seconds,80.6,s,mode A file playback,,"Apple M2 Pro, macOS 14.6.1, Core Audio, EarPods, block 512, ORT 1 thread",results/device/results_file_20261113_153148.json
+device,F12,roundtrip_passthrough_median,135.8,ms,mode B acoustic loopback (built-in speaker -> built-in mic),,"Apple M2 Pro, Core Audio; 8/8 clicks reliable; passthrough is dominated by device buffering",results/device/results_latency_20261116_143941.json
+device,F12,roundtrip_through_model_median,144.5,ms,mode B acoustic loopback (built-in speaker -> built-in mic),,"Apple M2 Pro, Core Audio; 8/8 clicks reliable; passthrough is dominated by device buffering",results/device/results_latency_20261116_143941.json
+device,F12,model_added_latency,8.7,ms,mode B acoustic loopback (built-in speaker -> built-in mic),,"Apple M2 Pro, Core Audio; theory: 384-sample output delay = 8.71 ms; passthrough is dominated by device buffering",results/device/results_latency_20261116_143941.json

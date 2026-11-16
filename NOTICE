@@ -1,0 +1,11 @@
+realtime-vocal-separation
+Copyright 2026 The realtime-vocal-separation authors
+
+This product is licensed under the Apache License, Version 2.0 (see LICENSE).
+
+This product includes software adapted from DTTNet-Pytorch
+(https://github.com/junyuchen-cjy/DTTNet-Pytorch, commit 890a25e), licensed under the Apache License,
+Version 2.0. The adapted building blocks (TFC, TDF, TFC-TDF residual block, band/sequence RNN module) are in
+experimental/rtstt.py, with modifications: everything was made causal in time and stateful so that the
+whole-signal path and the frame-by-frame streaming path run the same code. DTTNet-Pytorch in turn credits
+BandSplitRNN-Pytorch. A copy of the original license is in third_party/DTTNet/LICENSE.

@@ -1,0 +1,38 @@
+{
+  "label": "RT-STT paper-graph v2 adaptation; not exact reproduction",
+  "seed": 42,
+  "sample_rate": 44100,
+  "sources": [
+    "vocals",
+    "drums",
+    "bass",
+    "other"
+  ],
+  "chunk_samples": 32256,
+  "micro_batch": 8,
+  "gradient_accumulation": 4,
+  "effective_batch": 32,
+  "chunks_per_track_per_epoch": 64,
+  "max_epochs": 100,
+  "optimizer": "AdamW",
+  "lr": 0.0001,
+  "weight_decay": 0.01,
+  "gradient_clip_l2": 3.0,
+  "loss": "mean waveform L1 over four stereo stems",
+  "precision": "fp32 training with TF32; fp32 validation TF32 disabled",
+  "augmentation": "gain U[0.25,1.25], LR swap .5, cross-track mixing .5; no pitch/tempo or effects",
+  "validation": "all14 full tracks, causal stateful multi-hop GPU inference verified against hop512; no test",
+  "selection": "maximum raw valid vocals uSDR median for consistency with route A",
+  "smooth_epochs": 3,
+  "plateau_patience": 8,
+  "lr_factor": 0.5,
+  "early_stop_patience": 20,
+  "paper_deviations": [
+    "normalization/window/hidden dimensions partly inferred",
+    "gradient accumulation instead of four GPUs",
+    "local BN statistics rather than verified cross-device normalization",
+    "no pitch/time augmentation",
+    "no mixed precision or unspecified L1-normalization fine-tuning",
+    "epoch definition and stopping schedule are our reproducible choices"
+  ]
+}

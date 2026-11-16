@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Low-Latency Vocal Separation</title>
+<meta name="description" content="Audio examples of a causal, 11.6 ms-latency singing-voice separation model on MUSDB18-HQ test tracks.">
+<style>
+:root{--bg:#fafaf8;--card:#fff;--ink:#1d1f23;--mute:#6a6f78;--line:#e4e4df;--acc:#2f6f5e;--acc-soft:#e6f1ed}
+@media (prefers-color-scheme:dark){:root{--bg:#141517;--card:#1c1e21;--ink:#e8e8e6;--mute:#9a9ea6;--line:#2c2f33;--acc:#7cc2ab;--acc-soft:#1f2e29}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans CJK SC",sans-serif}
+main{max-width:880px;margin:0 auto;padding:48px 16px 64px;position:relative}
+.lang{position:absolute;top:14px;right:16px;display:flex;border:1px solid var(--line);border-radius:99px;overflow:hidden;background:var(--card)}
+.lang button{font:inherit;font-size:.82rem;border:0;background:none;color:var(--mute);padding:4px 12px;cursor:pointer}
+.lang button[aria-pressed="true"]{background:var(--acc-soft);color:var(--acc);font-weight:600}
+.lang button:focus-visible{outline:2px solid var(--acc);outline-offset:-2px}
+h1{font-size:1.9rem;line-height:1.2;margin:0 0 12px;letter-spacing:-.01em}
+.lede{color:var(--mute);margin:0 0 20px;max-width:65ch}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px;margin:0 0 20px;padding:0;list-style:none}
+.facts li{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px 12px}
+.facts b{display:block;font-size:1.05rem}.facts span{color:var(--mute);font-size:.85rem}
+.note{font-size:.92rem;color:var(--mute);border-left:3px solid var(--acc);padding:2px 0 2px 12px;margin:0 0 32px;max-width:70ch}
+.clip{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px;margin:0 0 20px}
+.clip header{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 16px;margin-bottom:12px}
+h2{font-size:1.2rem;margin:0}.artist{margin:0;color:var(--mute)}
+.meta{display:flex;flex-direction:column;align-items:flex-end;gap:2px;font-size:.85rem;color:var(--mute)}
+.pill{background:var(--acc-soft);color:var(--acc);font-weight:600;border-radius:99px;padding:2px 10px;font-size:.9rem}
+.row{display:grid;grid-template-columns:230px 1fr;align-items:center;gap:12px;padding:8px 0;border-top:1px solid var(--line)}
+.row.hl .name{color:var(--acc)}
+.lab{display:flex;flex-direction:column}.name{font-weight:600;font-size:.95rem}.sub{color:var(--mute);font-size:.8rem}
+audio{width:100%;height:36px}
+footer{margin-top:36px;font-size:.82rem;color:var(--mute);border-top:1px solid var(--line);padding-top:16px}
+footer p{margin:4px 0}
+@media (max-width:620px){.row{grid-template-columns:1fr;gap:4px}.meta{align-items:flex-start}h1{font-size:1.55rem;margin-top:16px}}
+</style></head><body><main>
+<div class="lang" role="group" data-i18n-aria="lang_label" aria-label="Language"><button type="button" data-lang="en" lang="en" aria-pressed="true">English</button><button type="button" data-lang="zh" lang="zh" aria-pressed="false">中文</button></div>
+<h1 data-i18n="h1">Low-latency singing-voice separation</h1>
+<p class="lede" data-i18n="lede">A causal model that pulls the lead vocals out of a full music mix in real time, block by block, using only past audio plus 11.6 ms of lookahead. Below are 15-second excerpts from unseen songs.</p>
+<ul class="facts">
+<li><b data-i18n="f1_b">Causal Conv-TasNet</b><span data-i18n="f1_s">stereo, 44.1 kHz, ~6.0 M parameters</span></li>
+<li><b data-i18n="f2_b">11.6 ms</b><span data-i18n="f2_s">algorithmic latency</span></li>
+<li><b data-i18n="f3_b">RTF 0.44</b><span data-i18n="f3_s">single CPU thread, 512-sample blocks</span></li>
+<li><b data-i18n="f4_b">MUSDB18-HQ test</b><span data-i18n="f4_s">50 songs, never used for training or model selection</span></li>
+</ul>
+<p class="note" data-i18n-html="note">Excerpts are <b>not cherry-picked</b>: songs were chosen by their per-song vocal uSDR on the test set — one near the 80th percentile, two near the median, one near the 20th percentile. Each excerpt is the 15 s with the strongest vocals, away from the start and end of the song. The model is run in streaming mode from the beginning of the song, exactly as in evaluation. All five versions of a song share one gain (peak −1 dBFS), so relative loudness is preserved. The spectral baseline is a separately trained causal STFT-mask model with the same 11.6 ms latency.</p>
+<section class="clip">
+  <header><div><h2 translate="no">What Have You Done To Me</h2><p class="artist" translate="no">Signe Jakobsen</p></div>
+  <div class="meta"><span class="pill">uSDR 6.8 dB</span><span class="pct"><span data-i18n="pct" data-args="{&quot;p&quot;: 80}">80th percentile</span> · <span data-i18n="tag_P80">about the 80th percentile</span></span>
+  <span class="time" data-i18n="excerpt" data-args="{&quot;a&quot;: &quot;2:20&quot;, &quot;b&quot;: &quot;2:35&quot;}">excerpt 2:20–2:35</span></div></header>
+  <div class="row"><div class="lab"><span class="name" data-i18n="mixture">Mixture</span><span class="sub" data-i18n="mixture_s">original mix</span></div><audio controls preload="none" src="audio/signe_jakobsen__what_have_you_done_to_me_mixture.mp3"></audio></div><div class="row hl"><div class="lab"><span class="name" data-i18n="f12_vocals">Vocals — estimate</span><span class="sub" data-i18n="f12_vocals_s">causal Conv-TasNet, streamed</span></div><audio controls preload="none" src="audio/signe_jakobsen__what_have_you_done_to_me_f12_vocals.mp3"></audio></div><div class="row"><div class="lab"><span class="name" data-i18n="f12_accompaniment">Accompaniment — estimate</span><span class="sub" data-i18n="f12_accompaniment_s">mixture − estimated vocals</span></div><audio controls preload="none" src="audio/signe_jakobsen__what_have_you_done_to_me_f12_accompaniment.mp3"></audio></div><div class="row"><div class="lab"><span class="name" data-i18n="reference_vocals">Vocals — reference</span><span class="sub" data-i18n="reference_vocals_s">ground-truth stem</span></div><audio controls preload="none" src="audio/signe_jakobsen__what_have_you_done_to_me_reference_vocals.mp3"></audio></div><div class="row"><div class="lab"><span class="name" data-i18n="c_vocals">Vocals — spectral baseline</span><span class="sub" data-i18n="c_vocals_s">causal FFT-512 mask model, same latency</span></div><audio controls preload="none" src="audio/signe_jakobsen__what_have_you_done_to_me_c_vocals.mp3"></audio></div>
+</section><section class="clip">
+  <header><div><h2 translate="no">My Own</h2><p class="artist" translate="no">Little Chicago&#x27;s Finest</p></div>
+  <div class="meta"><span class="pill">uSDR 5.1 dB</span><span class="pct"><span data-i18n="pct" data-args="{&quot;p&quot;: 49}">49th percentile</span> · <span data-i18n="tag_median">near the median</span></span>
+  <span class="time" data-i18n="excerpt" data-args="{&quot;a&quot;: &quot;2:07&quot;, &quot;b&quot;: &quot;2:22&quot;}">excerpt 2:07–2:22</span></div></header>
+  <div class="row"><div class="lab"><span class="name" data-i18n="mixture">Mixture</span><span class="sub" data-i18n="mixture_s">original mix</span></div><audio controls preload="none" src="audio/little_chicago_s_finest__my_own_mixture.mp3"></audio></div><div class="row hl"><div class="lab"><span class="name" data-i18n="f12_vocals">Vocals — estimate</span><span class="sub" data-i18n="f12_vocals_s">causal Conv-TasNet, streamed</span></div><audio controls preload="none" src="audio/little_chicago_s_finest__my_own_f12_vocals.mp3"></audio></div><div class="row"><div class="lab"><span class="name" data-i18n="f12_accompaniment">Accompaniment — estimate</span><span class="sub" data-i18n="f12_accompaniment_s">mixture − estimated vocals</span></div><audio controls preload="none" src="audio/little_chicago_s_finest__my_own_f12_accompaniment.mp3"></audio></div><div class="row"><div class="lab"><span class="name" data-i18n="reference_vocals">Vocals — reference</span><span class="sub" data-i18n="reference_vocals_s">ground-truth stem</span></div><audio controls preload="none" src="audio/little_chicago_s_finest__my_own_reference_vocals.mp3"></audio></div><div class="row"><div class="lab"><span class="name" data-i18n="c_vocals">Vocals — spectral baseline</span><span class="sub" data-i18n="c_vocals_s">causal FFT-512 mask model, same latency</span></div><audio controls preload="none" src="audio/little_chicago_s_finest__my_own_c_vocals.mp3"></audio></div>
+</section><section class="clip">
+  <header><div><h2 translate="no">Semantics</h2><p class="artist" translate="no">Forkupines</p></div>
+  <div class="meta"><span class="pill">uSDR 5.1 dB</span><span class="pct"><span data-i18n="pct" data-args="{&quot;p&quot;: 51}">51th percentile</span> · <span data-i18n="tag_median">near the median</span></span>
+  <span class="time" data-i18n="excerpt" data-args="{&quot;a&quot;: &quot;1:52&quot;, &quot;b&quot;: &quot;2:07&quot;}">excerpt 1:52–2:07</span></div></header>
+  <div class="row"><div class="lab"><span class="name" data-i18n="mixture">Mixture</span><span class="sub" data-i18n="mixture_s">original mix</span></div><audio controls preload="none" src="audio/forkupines__semantics_mixture.mp3"></audio></div><div class="row hl"><div class="lab"><span class="name" data-i18n="f12_vocals">Vocals — estimate</span><span class="sub" data-i18n="f12_vocals_s">causal Conv-TasNet, streamed</span></div><audio controls preload="none" src="audio/forkupines__semantics_f12_vocals.mp3"></audio></div><div class="row"><div class="lab"><span class="name" data-i18n="f12_accompaniment">Accompaniment — estimate</span><span class="sub" data-i18n="f12_accompaniment_s">mixture − estimated vocals</span></div><audio controls preload="none" src="audio/forkupines__semantics_f12_accompaniment.mp3"></audio></div><div class="row"><div class="lab"><span class="name" data-i18n="reference_vocals">Vocals — reference</span><span class="sub" data-i18n="reference_vocals_s">ground-truth stem</span></div><audio controls preload="none" src="audio/forkupines__semantics_reference_vocals.mp3"></audio></div><div class="row"><div class="lab"><span class="name" data-i18n="c_vocals">Vocals — spectral baseline</span><span class="sub" data-i18n="c_vocals_s">causal FFT-512 mask model, same latency</span></div><audio controls preload="none" src="audio/forkupines__semantics_c_vocals.mp3"></audio></div>
+</section><section class="clip">
+  <header><div><h2 translate="no">We Feel Alright</h2><p class="artist" translate="no">Girls Under Glass</p></div>
+  <div class="meta"><span class="pill">uSDR 3.4 dB</span><span class="pct"><span data-i18n="pct" data-args="{&quot;p&quot;: 20}">20th percentile</span> · <span data-i18n="tag_P20">about the 20th percentile</span></span>
+  <span class="time" data-i18n="excerpt" data-args="{&quot;a&quot;: &quot;1:27&quot;, &quot;b&quot;: &quot;1:42&quot;}">excerpt 1:27–1:42</span></div></header>
+  <div class="row"><div class="lab"><span class="name" data-i18n="mixture">Mixture</span><span class="sub" data-i18n="mixture_s">original mix</span></div><audio controls preload="none" src="audio/girls_under_glass__we_feel_alright_mixture.mp3"></audio></div><div class="row hl"><div class="lab"><span class="name" data-i18n="f12_vocals">Vocals — estimate</span><span class="sub" data-i18n="f12_vocals_s">causal Conv-TasNet, streamed</span></div><audio controls preload="none" src="audio/girls_under_glass__we_feel_alright_f12_vocals.mp3"></audio></div><div class="row"><div class="lab"><span class="name" data-i18n="f12_accompaniment">Accompaniment — estimate</span><span class="sub" data-i18n="f12_accompaniment_s">mixture − estimated vocals</span></div><audio controls preload="none" src="audio/girls_under_glass__we_feel_alright_f12_accompaniment.mp3"></audio></div><div class="row"><div class="lab"><span class="name" data-i18n="reference_vocals">Vocals — reference</span><span class="sub" data-i18n="reference_vocals_s">ground-truth stem</span></div><audio controls preload="none" src="audio/girls_under_glass__we_feel_alright_reference_vocals.mp3"></audio></div><div class="row"><div class="lab"><span class="name" data-i18n="c_vocals">Vocals — spectral baseline</span><span class="sub" data-i18n="c_vocals_s">causal FFT-512 mask model, same latency</span></div><audio controls preload="none" src="audio/girls_under_glass__we_feel_alright_c_vocals.mp3"></audio></div>
+</section>
+<footer>
+<p data-i18n="foot1">MUSDB18-HQ is licensed for non-commercial research use only. All songs remain the property of their original authors.</p>
+<p data-i18n="foot2">This page is an academic demonstration; only a 15-second excerpt of each song is included.</p>
+</footer>
+</main>
+<script>
+(function () {
+  var I18N = {"en": {"doc_title": "Low-Latency Vocal Separation", "h1": "Low-latency singing-voice separation", "lede": "A causal model that pulls the lead vocals out of a full music mix in real time, block by block, using only past audio plus 11.6 ms of lookahead. Below are 15-second excerpts from unseen songs.", "f1_b": "Causal Conv-TasNet", "f1_s": "stereo, 44.1 kHz, ~6.0 M parameters", "f2_b": "11.6 ms", "f2_s": "algorithmic latency", "f3_b": "RTF 0.44", "f3_s": "single CPU thread, 512-sample blocks", "f4_b": "MUSDB18-HQ test", "f4_s": "50 songs, never used for training or model selection", "note": "Excerpts are <b>not cherry-picked</b>: songs were chosen by their per-song vocal uSDR on the test set — one near the 80th percentile, two near the median, one near the 20th percentile. Each excerpt is the 15 s with the strongest vocals, away from the start and end of the song. The model is run in streaming mode from the beginning of the song, exactly as in evaluation. All five versions of a song share one gain (peak −1 dBFS), so relative loudness is preserved. The spectral baseline is a separately trained causal STFT-mask model with the same 11.6 ms latency.", "mixture": "Mixture", "mixture_s": "original mix", "f12_vocals": "Vocals — estimate", "f12_vocals_s": "causal Conv-TasNet, streamed", "f12_accompaniment": "Accompaniment — estimate", "f12_accompaniment_s": "mixture − estimated vocals", "reference_vocals": "Vocals — reference", "reference_vocals_s": "ground-truth stem", "c_vocals": "Vocals — spectral baseline", "c_vocals_s": "causal FFT-512 mask model, same latency", "tag_P80": "about the 80th percentile", "tag_median": "near the median", "tag_P20": "about the 20th percentile", "pct": "{p}th percentile", "excerpt": "excerpt {a}–{b}", "foot1": "MUSDB18-HQ is licensed for non-commercial research use only. All songs remain the property of their original authors.", "foot2": "This page is an academic demonstration; only a 15-second excerpt of each song is included.", "lang_label": "Language"}, "zh": {"doc_title": "低延迟人声分离", "h1": "低延迟歌声分离", "lede": "一个因果模型，逐块实时地从完整的音乐混音中提取主唱人声，只使用过去的音频加上 11.6 ms 的前瞻。下面是来自未见过歌曲的 15 秒片段。", "f1_b": "因果 Conv-TasNet", "f1_s": "立体声，44.1 kHz，约 6.0 M 参数", "f2_b": "11.6 ms", "f2_s": "算法延迟", "f3_b": "RTF 0.44", "f3_s": "单个 CPU 线程，512 样本块", "f4_b": "MUSDB18-HQ 测试集", "f4_s": "50 首歌曲，从未用于训练或模型选择", "note": "片段<b>不是挑选出来的最佳结果</b>：歌曲按测试集上每首歌的人声 uSDR 选取——一首约在第 80 百分位，两首接近中位数，一首约在第 20 百分位。每个片段是人声最强的 15 秒，避开歌曲的开头和结尾。模型从歌曲开头以流式方式运行，与评测时完全相同。同一首歌的五个版本共用一个增益（峰值 −1 dBFS），因此保留了相对响度。频谱基线是另外训练的因果 STFT 掩码模型，延迟同为 11.6 ms。", "mixture": "混音", "mixture_s": "原始混音", "f12_vocals": "人声 — 估计", "f12_vocals_s": "因果 Conv-TasNet，流式运行", "f12_accompaniment": "伴奏 — 估计", "f12_accompaniment_s": "混音 − 估计的人声", "reference_vocals": "人声 — 参考", "reference_vocals_s": "真实分轨", "c_vocals": "人声 — 同延迟的频谱基线", "c_vocals_s": "因果 FFT-512 掩码模型，延迟相同", "tag_P80": "约第 80 百分位", "tag_median": "接近中位数", "tag_P20": "约第 20 百分位", "pct": "第 {p} 百分位", "excerpt": "片段 {a}–{b}", "foot1": "MUSDB18-HQ 仅限非商业研究使用。所有歌曲的版权归原作者所有。", "foot2": "本页仅作学术展示，每首歌只包含 15 秒的片段。", "lang_label": "语言"}};
+  var KEY = 'p1demo.lang';
+  function fill(s, args) { return s.replace(/\{(\w+)\}/g, function (_, k) { return args && k in args ? args[k] : ''; }); }
+  function apply(lang) {
+    var d = I18N[lang] || I18N.en;
+    document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
+    document.title = d.doc_title;
+    var els = document.querySelectorAll('[data-i18n]');
+    for (var i = 0; i < els.length; i++) {
+      var e = els[i], a = e.getAttribute('data-args');
+      e.textContent = fill(d[e.getAttribute('data-i18n')], a ? JSON.parse(a) : null);
+    }
+    els = document.querySelectorAll('[data-i18n-html]');   // trusted, page-internal strings only
+    for (i = 0; i < els.length; i++) els[i].innerHTML = d[els[i].getAttribute('data-i18n-html')];
+    els = document.querySelectorAll('[data-i18n-aria]');
+    for (i = 0; i < els.length; i++) els[i].setAttribute('aria-label', d[els[i].getAttribute('data-i18n-aria')]);
+    var b = document.querySelectorAll('.lang button');
+    for (i = 0; i < b.length; i++) b[i].setAttribute('aria-pressed', String(b[i].getAttribute('data-lang') === lang));
+  }
+  function pick() {
+    var q = null;
+    try { q = new URLSearchParams(window.location.search).get('lang'); } catch (e) {}
+    if (q === 'en' || q === 'zh') return q;
+    try { var s = window.localStorage.getItem(KEY); if (s === 'en' || s === 'zh') return s; } catch (e) {}
+    return 'en';
+  }
+  var cur = pick(); apply(cur);
+  var btns = document.querySelectorAll('.lang button');
+  for (var i = 0; i < btns.length; i++) btns[i].addEventListener('click', function () {
+    var l = this.getAttribute('data-lang'); if (l === cur) return;
+    cur = l; apply(l);
+    try { window.localStorage.setItem(KEY, l); } catch (e) {}
+    try { var u = new URL(window.location.href); if (u.searchParams.has('lang')) { u.searchParams.set('lang', l); history.replaceState(null, '', u); } } catch (e) {}
+  });
+})();
+</script>
+</body></html>

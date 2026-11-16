@@ -1,0 +1,74 @@
+{
+ "tool": "realtime_test.py",
+ "time": "2026-11-13T15:30:28",
+ "system": {
+  "cpu": "Apple M2 Pro",
+  "logical_cpus": 10,
+  "os": "macOS-14.6.1-arm64-arm-64bit",
+  "python": "3.11.5",
+  "numpy": "2.4.6",
+  "onnxruntime": "1.32.0",
+  "sounddevice": "0.5.6",
+  "portaudio": "PortAudio V19.7.0-devel, revision unknown"
+ },
+ "model": "f12_stream_block512.onnx",
+ "model_output_delay_samples": 384,
+ "settings": {
+  "samplerate": 44100,
+  "blocksize": 512,
+  "budget_ms": 11.609977324263038,
+  "onnxruntime_threads": {
+   "intra_op": 1,
+   "inter_op": 1
+  },
+  "suggested_latency": "low",
+  "wav": "test_clip_30s.wav",
+  "output": "vocals",
+  "duration_s": 120.0
+ },
+ "mode": "file",
+ "device": {
+  "output": {
+   "index": 2,
+   "name": "EarPods",
+   "hostapi": "Core Audio",
+   "default_samplerate": 44100.0
+  }
+ },
+ "stream": {
+  "samplerate": 44100.0,
+  "blocksize": 512,
+  "latency_output_s": 0.014716553287981859
+ },
+ "wall_s": 80.638677458046,
+ "stats": {
+  "blocks": 6917,
+  "blocks_in_stats": 6907,
+  "warmup_blocks_excluded": 10,
+  "budget_ms": 11.609977324263038,
+  "inference_ms": {
+   "p50": 3.504832973703742,
+   "p99": 4.004555027931925,
+   "max": 6.108250003308058,
+   "mean": 3.364713190036334
+  },
+  "callback_ms": {
+   "p50": 3.5632080398499966,
+   "p99": 4.1126799071207625,
+   "max": 6.1671670991927385
+  },
+  "inference_over_budget": 0,
+  "inference_over_budget_ratio": 0.0,
+  "callback_over_budget": 0,
+  "rtf_median": 0.30188112136784184,
+  "xruns_output_underflow": 0,
+  "status_flags": {
+   "output_underflow": 0,
+   "output_overflow": 0,
+   "input_underflow": 0,
+   "input_overflow": 0,
+   "priming_output": 0
+  },
+  "callbacks_with_unexpected_frame_count": 0
+ }
+}

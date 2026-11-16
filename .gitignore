@@ -1,0 +1,32 @@
+# data
+musdb18hq/
+data/
+*.wav
+*.flac
+*.stem.mp4
+# checkpoints and exported models
+*.pt
+*.pth
+*.ckpt
+*.th
+*.onnx
+*.onnx.data
+# training / evaluation outputs and logs
+runs/
+eval/
+timing/
+logs/
+*.log
+*.out
+*.err
+deploy/results_*.json
+deploy/model_meta.json
+# caches
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ipynb_checkpoints/
+*.so
+.venv/
+venv/
+.DS_Store

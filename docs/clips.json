@@ -1,0 +1,62 @@
+[
+ {
+  "tag": "P80",
+  "track": "Signe Jakobsen - What Have You Done To Me",
+  "usdr_f12_test": 6.775609949636832,
+  "percentile": 79.59183673469387,
+  "clip_start_s": 140.75,
+  "clip_end_s": 155.75,
+  "files": {
+   "mixture": "audio/signe_jakobsen__what_have_you_done_to_me_mixture.mp3",
+   "f12_vocals": "audio/signe_jakobsen__what_have_you_done_to_me_f12_vocals.mp3",
+   "f12_accompaniment": "audio/signe_jakobsen__what_have_you_done_to_me_f12_accompaniment.mp3",
+   "reference_vocals": "audio/signe_jakobsen__what_have_you_done_to_me_reference_vocals.mp3",
+   "c_vocals": "audio/signe_jakobsen__what_have_you_done_to_me_c_vocals.mp3"
+  }
+ },
+ {
+  "tag": "median",
+  "track": "Little Chicago's Finest - My Own",
+  "usdr_f12_test": 5.088512346628739,
+  "percentile": 48.97959183673469,
+  "clip_start_s": 127.25,
+  "clip_end_s": 142.25,
+  "files": {
+   "mixture": "audio/little_chicago_s_finest__my_own_mixture.mp3",
+   "f12_vocals": "audio/little_chicago_s_finest__my_own_f12_vocals.mp3",
+   "f12_accompaniment": "audio/little_chicago_s_finest__my_own_f12_accompaniment.mp3",
+   "reference_vocals": "audio/little_chicago_s_finest__my_own_reference_vocals.mp3",
+   "c_vocals": "audio/little_chicago_s_finest__my_own_c_vocals.mp3"
+  }
+ },
+ {
+  "tag": "median",
+  "track": "Forkupines - Semantics",
+  "usdr_f12_test": 5.126719506404049,
+  "percentile": 51.02040816326531,
+  "clip_start_s": 112.0,
+  "clip_end_s": 127.0,
+  "files": {
+   "mixture": "audio/forkupines__semantics_mixture.mp3",
+   "f12_vocals": "audio/forkupines__semantics_f12_vocals.mp3",
+   "f12_accompaniment": "audio/forkupines__semantics_f12_accompaniment.mp3",
+   "reference_vocals": "audio/forkupines__semantics_reference_vocals.mp3",
+   "c_vocals": "audio/forkupines__semantics_c_vocals.mp3"
+  }
+ },
+ {
+  "tag": "P20",
+  "track": "Girls Under Glass - We Feel Alright",
+  "usdr_f12_test": 3.370209046480041,
+  "percentile": 20.408163265306122,
+  "clip_start_s": 87.5,
+  "clip_end_s": 102.5,
+  "files": {
+   "mixture": "audio/girls_under_glass__we_feel_alright_mixture.mp3",
+   "f12_vocals": "audio/girls_under_glass__we_feel_alright_f12_vocals.mp3",
+   "f12_accompaniment": "audio/girls_under_glass__we_feel_alright_f12_accompaniment.mp3",
+   "reference_vocals": "audio/girls_under_glass__we_feel_alright_reference_vocals.mp3",
+   "c_vocals": "audio/girls_under_glass__we_feel_alright_c_vocals.mp3"
+  }
+ }
+]

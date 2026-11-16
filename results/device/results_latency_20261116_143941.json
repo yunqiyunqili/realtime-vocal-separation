@@ -1,0 +1,189 @@
+{
+ "tool": "realtime_test.py",
+ "time": "2026-11-16T14:39:31",
+ "system": {
+  "cpu": "Apple M2 Pro",
+  "logical_cpus": 10,
+  "os": "macOS-14.6.1-arm64-arm-64bit",
+  "python": "3.11.5",
+  "numpy": "2.4.6",
+  "onnxruntime": "1.32.0",
+  "sounddevice": "0.5.6",
+  "portaudio": "PortAudio V19.7.0-devel, revision unknown"
+ },
+ "model": "f12_stream_block512.onnx",
+ "model_output_delay_samples": 384,
+ "settings": {
+  "samplerate": 44100,
+  "blocksize": 512,
+  "budget_ms": 11.609977324263038,
+  "onnxruntime_threads": {
+   "intra_op": 1,
+   "inter_op": 1
+  },
+  "suggested_latency": "low",
+  "clicks_per_path": 8,
+  "click_gap_s": 0.5,
+  "click_amp": 0.5,
+  "click": "20 ms Hann-windowed exponential sweep 300 Hz-8 kHz",
+  "model_path_signal": "accompaniment output (aligned mixture - vocals)"
+ },
+ "mode": "latency",
+ "device": {
+  "input": {
+   "index": 3,
+   "name": "MacBook Pro Microphone",
+   "hostapi": "Core Audio",
+   "default_samplerate": 48000.0
+  },
+  "output": {
+   "index": 4,
+   "name": "MacBook Pro Speakers",
+   "hostapi": "Core Audio",
+   "default_samplerate": 48000.0
+  }
+ },
+ "stream": {
+  "samplerate": 44100.0,
+  "blocksize": 512,
+  "latency_input_s": 0.13825396825396824,
+  "latency_output_s": 0.04213151927437642,
+  "reported_roundtrip_ms": 180.38548752834467
+ },
+ "latency": {
+  "recording_peak": 2.3890581130981445,
+  "passthrough": {
+   "n_clicks": 8,
+   "n_reliable": 8,
+   "median_ms": 135.80498866213154,
+   "min_ms": 135.80498866213154,
+   "max_ms": 135.80498866213154,
+   "spread_ms": 0.0,
+   "per_click": [
+    {
+     "lag_samples": 5989,
+     "lag_ms": 135.80498866213154,
+     "peak_to_median": 11511.1767578125
+    },
+    {
+     "lag_samples": 5989,
+     "lag_ms": 135.80498866213154,
+     "peak_to_median": 13126.958984375
+    },
+    {
+     "lag_samples": 5989,
+     "lag_ms": 135.80498866213154,
+     "peak_to_median": 14412.6796875
+    },
+    {
+     "lag_samples": 5989,
+     "lag_ms": 135.80498866213154,
+     "peak_to_median": 14076.5341796875
+    },
+    {
+     "lag_samples": 5989,
+     "lag_ms": 135.80498866213154,
+     "peak_to_median": 12919.6572265625
+    },
+    {
+     "lag_samples": 5989,
+     "lag_ms": 135.80498866213154,
+     "peak_to_median": 14616.0419921875
+    },
+    {
+     "lag_samples": 5989,
+     "lag_ms": 135.80498866213154,
+     "peak_to_median": 13838.6748046875
+    },
+    {
+     "lag_samples": 5989,
+     "lag_ms": 135.80498866213154,
+     "peak_to_median": 12122.9794921875
+    }
+   ]
+  },
+  "through_model": {
+   "n_clicks": 8,
+   "n_reliable": 8,
+   "median_ms": 144.5124716553288,
+   "min_ms": 144.5124716553288,
+   "max_ms": 144.53514739229027,
+   "spread_ms": 0.022675736961474513,
+   "per_click": [
+    {
+     "lag_samples": 6373,
+     "lag_ms": 144.5124716553288,
+     "peak_to_median": 14426.7001953125
+    },
+    {
+     "lag_samples": 6373,
+     "lag_ms": 144.5124716553288,
+     "peak_to_median": 14689.8564453125
+    },
+    {
+     "lag_samples": 6373,
+     "lag_ms": 144.5124716553288,
+     "peak_to_median": 14669.990234375
+    },
+    {
+     "lag_samples": 6373,
+     "lag_ms": 144.5124716553288,
+     "peak_to_median": 14662.5830078125
+    },
+    {
+     "lag_samples": 6373,
+     "lag_ms": 144.5124716553288,
+     "peak_to_median": 14945.044921875
+    },
+    {
+     "lag_samples": 6374,
+     "lag_ms": 144.53514739229027,
+     "peak_to_median": 14208.0537109375
+    },
+    {
+     "lag_samples": 6373,
+     "lag_ms": 144.5124716553288,
+     "peak_to_median": 13038.486328125
+    },
+    {
+     "lag_samples": 6373,
+     "lag_ms": 144.5124716553288,
+     "peak_to_median": 12937.5947265625
+    }
+   ]
+  },
+  "model_output_delay_samples": 384,
+  "model_output_delay_ms": 8.707482993197278,
+  "model_extra_ms": 8.70748299319726
+ },
+ "stats": {
+  "blocks": 819,
+  "blocks_in_stats": 819,
+  "warmup_blocks_excluded": 0,
+  "budget_ms": 11.609977324263038,
+  "inference_ms": {
+   "p50": 2.205000026151538,
+   "p99": 3.5870731435716117,
+   "max": 6.197917042300105,
+   "mean": 2.350730115322621
+  },
+  "callback_ms": {
+   "p50": 2.27145804092288,
+   "p99": 3.728210632689294,
+   "max": 6.809332873672247
+  },
+  "inference_over_budget": 0,
+  "inference_over_budget_ratio": 0.0,
+  "callback_over_budget": 0,
+  "rtf_median": 0.1899228538150055,
+  "xruns_output_underflow": 0,
+  "status_flags": {
+   "output_underflow": 0,
+   "output_overflow": 0,
+   "input_underflow": 0,
+   "input_overflow": 0,
+   "priming_output": 0
+  },
+  "callbacks_with_unexpected_frame_count": 0
+ }
+}
