@@ -168,9 +168,10 @@ python realtime_test.py --mode latency                 # mode B: click loopback 
 
 ## Pretrained weights
 
-The F12 checkpoint (`f12_model.pt`, 24 MB, epoch 75, SHA256 `c72b34b3b93b...`) and its exported streaming model
-(`f12_stream_block512.onnx` + `model_meta.json`) are published as GitHub Release assets rather than committed to
-git. Put the ONNX files into `deploy/` for the real-time test.
+The pretrained weights are not publicly released yet. The F12 checkpoint (`f12_model.pt`, 24 MB, epoch 75, SHA256
+`c72b34b3b93b...`) and its exported streaming model (`f12_stream_block512.onnx` + `model_meta.json`) are available
+from the author on request. With a checkpoint, the ONNX files can be exported with `scripts/export_onnx.py` (above);
+put them into `deploy/` for the real-time test.
 
 ## Acknowledgements
 

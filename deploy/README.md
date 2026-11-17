@@ -7,7 +7,7 @@ keeps up in real time. It needs only four libraries: numpy, soundfile, sounddevi
 |---|---|
 | `realtime_test.py` | this directory |
 | `requirements.txt` | this directory |
-| `f12_stream_block512.onnx`, `model_meta.json` | GitHub Release assets, or `python scripts/export_onnx.py --ckpt f12_model.pt --out-dir deploy/` |
+| `f12_stream_block512.onnx`, `model_meta.json` | not publicly released yet (available from the author on request); with a checkpoint: `python scripts/export_onnx.py --ckpt f12_model.pt --out-dir deploy/` |
 | a 44.1 kHz music file | your own (no audio is shipped: MUSDB18-HQ may not be redistributed) |
 
 The ONNX model takes one block of 512 samples per call; all model state is explicit input/output
